@@ -21,7 +21,6 @@ The authors tried to argue from different perspectives(Math and CS is different,
 
 Although the author gave clear up sides for not focusing on verification and solid reasons why it's hard. The author seldom mentioned why we shouldn't proceed and left the reader wondering the "What if" problem.
 
-
 ## bib
 ```
 @article{de1979social,
