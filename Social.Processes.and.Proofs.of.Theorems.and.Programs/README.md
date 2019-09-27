@@ -1,4 +1,4 @@
-# [Social.processes.and.proofs.of.theorems.and.programs](https://www.cs.umd.edu/~gasarch/BLOGPAPERS/social.pdf)
+# [Social.Processes.and.Proofs.of.Theorems.and.Programs](https://www.cs.umd.edu/~gasarch/BLOGPAPERS/social.pdf)
 
 ## Summary
 This paper mainly focus on argue against verification, asking researchers not to put verification into program language design main concern and to put more energy on reliability.
