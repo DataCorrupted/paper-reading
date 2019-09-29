@@ -1,5 +1,15 @@
 # [Angora.Efficient.Fuzzing.by.Principled.Search](https://web.cs.ucdavis.edu/~hchen/paper/chen2018angora.pdf)
 
+## Summary
+
+## Pros
+
+## Cons
+
+- Don't have a experiment described in [Evaluating.Fuzz.Testing](../Evaluating.Fuzz.Testing/README.md)
+
+## Comments
+
 ## bib
 ```
 @inproceedings{chen2018angora,
