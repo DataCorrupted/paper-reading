@@ -22,6 +22,42 @@ The authors also proposed an application for function synonyms: specification mi
 In general this paper is easy to read and the idea is quite interesting, although not groundbreaking. The authors focused on error-handling, yet more application can be explored. One application of function synonyms paring is plagiarism checking. Is
 it possible if we change the encoder in Sec 3.1 then we can use _Func2vec_ for something else? 
 
+## Discussion with the Author
+1. **Why cluster specifications?**  
+Or else we would have tons of low-support specifications that are basically saying the same thing.
+
+2. **What if there are low labels in a sentence?**  
+There is going to be at least one label because you started from a node with label. Tried to throw away sentences with low amount labels(threshold = 2), the result is not affected much.
+
+3. **Why k steps instead of k labels for the length of the random walk?**  
+The intuition is that the labels are close to each other in the sense of instructions and therefore the sentence reflects what's shortly followed by that label. k labels may take the path too far away.
+
+4. **Sec 4 last Paragraph: "it is possible that Func2vec will perform differently for classes of function synonyms we are unaware   of." Why saying that?**  
+No experiment has been done on code besides the Linux kernel by the time of the paper writing. Trying OpenSSL, no results for now.
+
+5. **How do specifications get clustered?**  
+(Without getting too much math)  Functions in Context(Ctx) and Response(Rsp) are synonyms or the same. For two specifications, if the Ctx set or Rsp set is the same, things can be simple. If both sets are different, the matching algorithm needed to match functions between two Ctx sets and Rps sets, respectively. Didn't explain the matching algorithm in detail and not satisfied with the answer XD.
+
+6. **How was the bug found when the response is missing?(Fig 7) Chances are that this function cannot be clustered, nor the   specification.**  
+The function is still clustered because one missing function call wouldn't affect that much.(As we suspected) However, the specification didn't match. They got the specification first and then did an extra static analysis to check for each function "With this Ctx do you have this Rsp" and found one response missing.
+ 
+7. **Why did the paper look like two parts(Func2vec and specification mining) that are weakly connected?**  
+This paper actually started off by mining specifications, that's the main goal. But as they revise the paper along the way, function synonymy(Func2vec) grows from a paragraph to two sections(Sec 3 & 4). 
+
+8. **Justification for the random walk? Why randomly step into functions?**  
+We want to capture what's inside a function as well as the following instructions because we believe there are many wrappers in the kernel. For example:
+```c
+    { a0; b0; c0; }
+
+    f1() { b1; c1;}
+    { a1; f1(); }  
+
+    f2() { b2; c2;}
+    { a2; f2() }
+```
+Such a structure can be captured by the random walk.
+(Still not satisfied, somehow Aditya believes this random walk is the highlight of this paper)
+
 ## bib
 ```
 @inproceedings{defreez2018path,
