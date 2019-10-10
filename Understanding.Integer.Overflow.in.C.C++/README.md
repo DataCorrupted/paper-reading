@@ -2,7 +2,9 @@
 
 ## Summary
 
-This paper systematically studied all integer overflow errors in C/C++. The authors wrote a library Integer Overflow Checker(IOC), which has been merged to LLVM since LLVM 3.5. In the experiment IOC is used to check SPEC CINT 2006 as well as open source libraries including SQLite, SafeInt, LLVM, etc.
+This paper systematically studied all integer overflow errors in C/C++. 
+The authors wrote a library Integer Overflow Checker(IOC), which has been merged to LLVM since LLVM 3.5. 
+In the experiment IOC is used to check SPEC CINT 2006 as well as open source libraries including SQLite, SafeInt, LLVM, etc.
 
 ## Pros
 

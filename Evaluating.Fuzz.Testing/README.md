@@ -2,7 +2,9 @@
 
 ## Summary
 
-This paper recognized the evaluation problem in fuzzing papers. It argues that different settings and configurations can lead to different conclusion. To demonstrate such difference, the authors did extensive experiments on 32 current available tools and proposed a meaningful way of doing experiments on fuzzers.
+This paper recognized the evaluation problem in fuzzing papers. 
+It argues that different settings and configurations can lead to different conclusion. 
+To demonstrate such difference, the authors did extensive experiments on 32 current available tools and proposed a meaningful way of doing experiments on fuzzers.
 
 ## Pros
 
@@ -16,9 +18,12 @@ This paper recognized the evaluation problem in fuzzing papers. It argues that d
 
 ## Comments
 
-This paper is rather interesting to read. The authors put a lot efforts in the experiments. The result that different timeout, seed can lead to different conclusion. 
+This paper is rather interesting to read. 
+The authors put a lot efforts in the experiments. 
+The result that different timeout, seed can lead to different conclusion. 
 
-However, I find limited novelty and contribution. Even thought the citation of this paper may be very high(Every fuzzing paper need to cite it in experiment section from now on), I failed to see a long term impact of this paper.
+However, I find limited novelty and contribution. 
+Even thought the citation of this paper may be very high(Every fuzzing paper need to cite it in experiment section from now on), I failed to see a long term impact of this paper.
 
 ## bib
 ```
