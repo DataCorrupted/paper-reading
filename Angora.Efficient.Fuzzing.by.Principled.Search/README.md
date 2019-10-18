@@ -15,6 +15,11 @@ In experiment, Angora found almost all LAVA bugs and 6, 52, 29, 40, and 48 new b
 
 - Don't have a experiment described in [Evaluating.Fuzz.Testing](../Evaluating.Fuzz.Testing/README.md)
 
+## Further reading
+
+[When Results Are All That Matters: The Case of the Angora Fuzzer](https://andreas-zeller.blogspot.com/2019/10/when-results-are-all-that-matters-case.html)   
+[Evaluating.Fuzz.Testing](https://www.cs.umd.edu/~mwh/papers/fuzzeval.pdf)  
+
 ## bib
 ```
 @inproceedings{chen2018angora,
