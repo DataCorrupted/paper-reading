@@ -20,6 +20,10 @@ It also found real-world bugs.
 - State-of-art symbolic execution.
 - Real bugs found.
 
+## Cons
+
+- Compare with manual testing is trivial. Also the authors didn't mention how they did random test.
+
 ## bib
 ```
 @inproceedings{cadar2008klee,
