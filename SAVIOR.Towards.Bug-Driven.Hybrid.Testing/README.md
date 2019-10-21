@@ -5,12 +5,16 @@ Please add a valid bib when it's published.
 
 ## Summary
 
-This paper combines fuzz testing and comcolic execution. The main contribution in this paper is that the authors formulized a new approach to pritorize seeds. 
+This paper combines fuzz testing and comcolic execution. The main contribution in this paper is that the authors formulized a new approach to prioritize seeds. 
 
 SAVIOR is composed of 3 parts: AFL, coordinator, and KLEE.
 Coordinator will prioritize seeds according to the potential basic blocks that can be reached and potential bugs(with the help of UBSan).
-The priority algorithm also took number of trials into account.
+The priority algorithm also took number of trials into account.	
 KLEE is used to do bug guided verification, i.e. given a seed and a basic block with potential bug, KLEE is used to solve the constrain to trigger that bug.
+
+The main contribution is **Bug guided prioritization** and **Bug guided verification**.  
+Prioritization is done through: <img src="http://bit.ly/2pB2k7g" align="center" border="0" alt="\frac{1}{n} \sum_{k=1}^n e^{-0.05S_k} * L_k" width="151" height="50" />  
+Verification is done through KLEE.
 
 Two set of experiments are done. SAVIOR has been able to find more bugs than LAVA-M listed. It outperformed other hybrid fuzzers(DRILLER and QSYM) even with verifier helping them. In 8 real-world open source programs, SAVIOR found tens of unique bugs compared to the other tools. SAVIOR also found 102 Out of Bound(OOB) errors and 141 logic errors in total.
 
