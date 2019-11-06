@@ -32,7 +32,7 @@ Prioritize has being mentioned more and more in recent researches.
 Angora[[1]](https://web.cs.ucdavis.edu/~hchen/paper/chen2018angora.pdf) started off by lower priority of those who cannot be solved immediately, IntEgrity prioritize integer related bugs, this work start to prioritize seed more carefully by using UBSan. 
 GREYEYE[[2]](https://www.usenix.org/system/files/sec20spring_gan_prepub.pdf) took a step further and even started to prioritize bytes in a seed and branches reached by a seed.
 
-But directed is also mentioned a lot recently. 
+Bug directed is also mentioned a lot recently. 
 Before, people assume that code coverage lead to bugs, this is a good intuition. 
 But as the bug is hiding deeper and deeper due to the development of coverage-based fuzzer, this assumption may not hold and we need to start dealing with bugs more seriously. 
 However, how to direct to a bug except to using priority is yet not well answered.
