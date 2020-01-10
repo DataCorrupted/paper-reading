@@ -23,6 +23,10 @@ The paper did experiments on 8 file systems(And write parser on all of them). Th
 - The work is basically an update, or an adapter of AFL so that it works on file system.
 - It would be better if the metadata mutation is not randomly based.
 
+## Video
+
+[S&P19](https://www.youtube.com/watch?v=UbzZDjk2lsI)
+
 ## bib
 ```
 @inproceedings{xu2019fuzzing,
