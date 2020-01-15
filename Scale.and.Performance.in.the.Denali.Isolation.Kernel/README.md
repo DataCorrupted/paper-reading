@@ -34,6 +34,23 @@ Further experiments(including the one on game server) showed that scalability is
 
 - Backward compatibility
 
+## Notes in discussion on 1/13/20
+
+- Monolithic kernel: Fast. file/process/socket
+- Microkernel: Simpilicity. send/recv
+
+### Denali hardware abstractions
+
+- Interruptes: simplar
+- CPU: Deprecate certain CPU features while still able to use linux toolchain.
+- MMU
+- Devices: Simplified
+- Naming
+
+
+### Is it safe to deprecate instructions in a processor?
+
+
 ## bib
 ```
 @article{whitaker2002scale,
