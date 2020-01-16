@@ -50,6 +50,7 @@ Further experiments(including the one on game server) showed that scalability is
 
 ### Is it safe to deprecate instructions in a processor?
 
+## [Video](https://www.youtube.com/watch?v=GY7dvfwZNm4)
 
 ## bib
 ```

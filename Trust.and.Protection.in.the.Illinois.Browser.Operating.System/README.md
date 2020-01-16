@@ -22,6 +22,8 @@ The paper propose a shinked trust computing base(TCB). The kernel puts drivers o
 - Didn't prevent all the vulnerabilitys as they are expected to.
 - Compare LoC didn't seem fair since this is a micro kernel.
 
+## [Video](https://www.youtube.com/watch?v=o39Lw-ALDtA&t=281s)
+
 ## bib
 ```
 @inproceedings{tang2010trust,
