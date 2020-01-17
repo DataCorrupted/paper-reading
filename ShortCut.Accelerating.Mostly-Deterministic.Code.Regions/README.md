@@ -25,6 +25,9 @@ It even reached a huge performance gain on certain evaluations.
 
 - Too much heuristics, especially on taint tracking.
 - Didn't mention how profiling is done in evaluation, yet it affects the result greatly.
+	- Web/PHP server: 4 train case, 84 test set. Didn't mention which 84?
+	- Compilation: change var name in libelf 0.8.9 and openssh-6.1p1. But change var names will only affect lexical analysis and parser. Back-end won't be affected. 
+	- Interactive app startup: ambiguous how input set is(Emacs: last 10% input changed, others didn't mention). 
 - Break even part is only mentioned in the talk but not in the paper.
 
 ## [Video](https://sosp19.rcs.uwaterloo.ca/videos/D3-S3-P2.mp4)
