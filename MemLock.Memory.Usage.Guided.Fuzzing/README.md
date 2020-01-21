@@ -3,7 +3,7 @@
 ## Summary
 
 MemLock focuses on fuzzing memory errors. 
-To be more precise, they focus uncontrolled memory error, i.e. huge recursive, huge allocation and memory leak.
+To be more precise, they focus uncontrolled memory error, i.e. huge recursion, huge allocation and memory leak.
 MemLock is build upon AFL with certain modifications.
 
 The approach is divided into two parts. 
@@ -25,6 +25,8 @@ MemLock aced all of four questions proposed and found 15 CVES with 12 already pa
 
 - A variation based on AFL, lack of novelty.
 - Comparison on state-of-art fuzzers are not fair, since these bugs needs special tuning and none of these fuzzers are built for this task.
+- Hardship breaking comparasions.
+- Algorithm is actually wrong and it wouldn't terminate until the queue is empty.
 
 ## bib
 ```
