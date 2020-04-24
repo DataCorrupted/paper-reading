@@ -8,15 +8,20 @@ The work flow can be seen in Fig 1 and 2.
 PCSG is a proposed grammar built on Context Sensitive Grammar(CSG). 
 CSG is used to help pass semantics check.(Review CFG, CSG if necessary)
 Provided with a CFG and data set crawled from the Internet, the authors learn a PCSG. 
-In PCSG same derivation rules have summed probability of 1. 
 
-With PCSG, the seed generation algorithm can be seen in Algorithm 1.
+**PCSG Learning**: In PCSG same derivation rules have summed probability of 1. 
+
+**Seed Generation**: the algorithm can be seen in Algorithm 1.
 Some heuristics are used:
 
 1. Favor low-probability production rules.
 2. Favor low-frequency production rules, and restrict the application number of the same production rule.
 3. Favor low-complexity production rules.
 4. Restrict the total number of rule applications.
+
+**Seed selection**: based on coverage.
+
+**Seed mutation**: randomally mutate terminals.
 
 In experiment the authors reported 16 new memory corruption bugs and 32 DOS bugs.
 They answered the following 4 questions:
@@ -37,6 +42,10 @@ They answered the following 4 questions:
 - Blindly improve code coverage
 - Not a huge leap compared to crawl, the base line choice is not good enough.
 - Failed to produce on JS, which limit this works extendibility, i.e. it can only be used in xml and xsl, not other languages.
+
+## Related reading
+
+[S&P19: ProFuzzer: On-the-fly Input Type Probing for Better Zero-day Vulnerability Discovery](https://wcventure.github.io/FuzzingPaper/Paper/SP19_Profuzz.pdf)
 
 ## bib
 ```
