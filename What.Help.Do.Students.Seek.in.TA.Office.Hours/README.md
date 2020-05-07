@@ -13,13 +13,20 @@ In this process, both TA and students try to write a form to record  their inter
 ## Methodology
 
 The authors used DR, and classified all questions into 14 categories(See Fig 2), 6 of which are in DR and 7 of which are not and one being "Other"
+
+In the TA form TA are required to further classify what type of the help is asked(instruction, clarification or verification), yet the student don't have to do it as students may not have any idea. B
+But the student do have to classify their question into 14 caregories.
 The students and TAs are asked to fill out the form after the session. 
+
+To elimate the biases between TAs, they all host office hours and the students are free to go to anyone without pre-assignments.
+
 Afterwards, the data are collected and evaluated.
 
 ## Results
 
 The authors hosted a course that compresses many basic computer science knowledge and recorded all TA-student interaction using this method.
 There are 67 students and most of them got A with only one failed.
+12 undergraduate TAs are selected for this course.
 
 They found that the average time of visit of students are shaped live "V" with regard to students' grade.
 Another finding is that students prefer to ask questions in DR.
