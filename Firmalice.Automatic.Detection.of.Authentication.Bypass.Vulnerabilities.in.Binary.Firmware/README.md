@@ -20,11 +20,12 @@ The process can be devided into:
 ## Pros
 
 - How they dealed with binary blobs that don't have underline OSes.
+- Tackled with programs that can't easily run
 
 ## Cons
 
 - Security policy relies on human expert, the approach does not scale. Beside, it's hard to work on bugs unknown.
-- Evaluation is weak. 
+- Evaluation is weak, only 3 binary analysised and all backdoor are known. 
 
 ## Comment
 
