@@ -1,4 +1,4 @@
-#[Looking.from.the.Mirror.Evaluating.IoT.Device.Security.through.Mobile.Companion.Apps](https://www.usenix.org/conference/usenixsecurity19/presentation/wang-xueqiang)
+# [Looking.from.the.Mirror.Evaluating.IoT.Device.Security.through.Mobile.Companion.Apps](https://www.usenix.org/conference/usenixsecurity19/presentation/wang-xueqiang)
 
 ## Summary
 
