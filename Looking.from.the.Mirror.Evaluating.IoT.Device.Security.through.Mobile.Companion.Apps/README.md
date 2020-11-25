@@ -64,16 +64,11 @@ A device is said to have a similar interface as another device if they both acce
 
 ## bib
 ```
-@inproceedings {236342,
-author = {Xueqiang Wang and Yuqiong Sun and Susanta Nanda and XiaoFeng Wang},
-title = {Looking from the Mirror: Evaluating IoT Device Security through Mobile Companion Apps},
-booktitle = {28th {USENIX} Security Symposium ({USENIX} Security 19)},
-year = {2019},
-isbn = {978-1-939133-06-9},
-address = {Santa Clara, CA},
-pages = {1151--1167},
-url = {https://www.usenix.org/conference/usenixsecurity19/presentation/wang-xueqiang},
-publisher = {{USENIX} Association},
-month = aug,
+@inproceedings{wang2019looking,
+  title={Looking from the mirror: evaluating IoT device security through mobile companion apps},
+  author={Wang, Xueqiang and Sun, Yuqiong and Nanda, Susanta and Wang, XiaoFeng},
+  booktitle={28th $\{$USENIX$\}$ Security Symposium ($\{$USENIX$\}$ Security 19)},
+  pages={1151--1167},
+  year={2019}
 }
 ```
