@@ -2,7 +2,9 @@
 
 ## Summary
 
-This paper proposed to use NN to model a program. Consider input as a vector _x_, what we want to optimize is the number of bugs found. However, this function can be discrete, therefore what we do is using the number of branch coverage as the function and use NN to model it.
+This paper proposed to use NN to model a program. 
+Consider input as a vector _x_, what we want to optimize is the number of bugs found. 
+However, this function can be discrete, therefore what we do is using the number of branch coverage as the function and use NN to model it.
 
 ## Pros
 
