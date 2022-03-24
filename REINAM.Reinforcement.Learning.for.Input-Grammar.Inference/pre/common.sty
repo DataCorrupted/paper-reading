@@ -1,0 +1,214 @@
+\ProvidesPackage{common}
+
+% A reference to `Star Wars IV: A New Hope`.
+% A little bit cliche, but it does convey our main topic: 
+% we are giving fuzzers a fresh new start.
+%\newcommand{\valkyrie}{Skywalker\xspace}
+
+% A reference to Minecraft. 
+% The bottom of the MC world is based on `Bedrock`
+%\newcommand{\valkyrie}{Bedrock\xspace}
+
+\newcommand{\projtitle}{\valkyrie}
+\newcommand{\fn}[1]{\mbox{\textsc{#1}}}
+\newcommand{\kw}[1]{\textbf{#1}\xspace}
+\newcommand{\file}[1]{\textit{#1}\xspace}
+
+\usepackage{xspace}
+
+\usepackage{mathtools}
+% unicode-math should be loaded after any other math- or font-related package.
+% Should only use in lualatex or xelatex, not pdflatex
+% \usepackage{unicode-math}
+
+% For math fonts
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+
+% \usepackage{amssymb}
+\usepackage{amsthm}
+\newcommand{\nan}{\texttt{NaN}}
+
+\usepackage{pgf}
+\usepackage[utf8]{inputenc}
+% \DeclareUnicodeCharacter{2212}{-}
+
+% Avoids redefinition if already defined
+\newtheorem{thrm}{Theorem}
+\theoremstyle{definition}
+\newtheorem{dfn}{Definition}[section]
+
+% For floor and ceil
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+% For comment
+\usepackage{comment}
+
+% For tables
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{booktabs}
+
+% For SI numerical display.
+\usepackage{siunitx}
+\sisetup{detect-all}
+\sisetup{
+  group-separator={,},
+  output-decimal-marker={.}
+}
+
+% For algorithmicx
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\providecommand{\algorithmautorefname}{Algorithm}
+% It seems that \and, \not is taken in math packages.
+\algnewcommand\AAnd{\textbf{and }}
+\algnewcommand\OOr{\textbf{or }}
+\algnewcommand\NNot{\textbf{not }}
+\algnewcommand\TTrue{\textbf{true\xspace}}
+\algnewcommand\FFalse{\textbf{false\xspace}}
+
+
+% For autoref & section reference.
+\usepackage{hyperref}
+\def\sectionautorefname{Section}
+\def\subsectionautorefname{Section}
+\def\subsubsectionautorefname{Section}
+
+% For cross over useless parts.
+\usepackage{soul}
+\usepackage[normalem]{ulem}
+
+\usepackage{color}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.85,0.85,0.85}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{myblue}{RGB}{0, 120, 215}
+
+% For listings
+% In case we need rust format, check https://github.com/denki/listings-rust
+\usepackage{listings}
+\makeatletter
+\AtBeginDocument{
+  \DeclareCaptionSubType{lstlisting}
+  \renewcommand{\p@sublstlisting}{\thelstlisting}
+  \renewcommand{\thesublstlisting}{(\alph{sublstlisting})}
+}
+\makeatother
+\lstset{ %
+  frame=single,
+  % numbers=switch,
+  % numbersep = 10 pt,
+  numbers=left,
+  stepnumber=1,
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\ttfamily\small,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={(*@}{@*)},           % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=1,
+}
+\newcommand{\highlight}{\makebox[0pt][l]{\color{mygray}\rule[-2pt]{\linewidth}{7pt}}}
+
+% For graph inclusion, using path figure.
+\usepackage{graphicx}
+\graphicspath{{./figure/}}
+% For svg
+\usepackage{svg}
+
+\usepackage{caption}
+\usepackage[labelformat=simple]{subcaption}
+
+\usepackage{graphics}
+
+% For tikz pic
+\usepackage{tikz}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{bold-extra}
+\usetikzlibrary{chains,shadows.blur}
+\usetikzlibrary{shapes,shapes.geometric,backgrounds,arrows,automata,positioning,cd,}
+\tikzset{
+  cfgedge/.style   = {black, ->, >=stealth},
+  thickcfgedge/.style   = {black, ->, >=stealth, line width=1.1pt},
+}
+\tikzset{
+  basic box/.style = {
+    shape = rectangle,
+    align = center,
+    draw  = #1,
+    fill  = #1!25,
+    rounded corners},
+  header node/.style = {
+    Minimum Width = header nodes,
+    font          = \strut\Large\ttfamily,
+    text depth    = +0pt,
+    fill          = white,
+    draw},
+  header/.style = {%
+    inner ysep = +1.5em,
+    append after command = {
+      \pgfextra{\let\TikZlastnode\tikzlastnode}
+      node [header node] (header-\TikZlastnode) at (\TikZlastnode.north) {#1}
+      node [span = (\TikZlastnode)(header-\TikZlastnode)]
+        at (fit bounding box) (h-\TikZlastnode) {}
+    }
+  },
+  hv/.style = {to path = {-|(\tikztotarget)\tikztonodes}},
+  vh/.style = {to path = {|-(\tikztotarget)\tikztonodes}},
+  fat blue line/.style = {ultra thick, blue}
+}
+\tikzstyle{abstract}=[rectangle, draw=black, rounded corners, fill=black!20, drop shadow,
+        text centered, anchor=north, text=black, text width=3cm]
+\tikzstyle{comment}=[rectangle, draw=black, rounded corners, fill=green, drop shadow,
+        text centered, anchor=north, text=white, text width=3cm]
+\tikzstyle{myarrow}=[->, >=open triangle 90, thick]
+\tikzstyle{line}=[-, thick]
+\tikzset{
+  dotted/.style   = {black, dashed, ->, >=stealth},
+  cfgedge/.style   = {black, ->, >=stealth},
+  forward/.style = { blue, ->, >=angle 45},
+  backward/.style = { red, densely dashed, ->, >=latex' },
+  backwardleft/.style = { red, densely dashed, <-, >=latex' },
+  bullet/.style = {circle, inner sep=1pt, fill},
+}
+\usetikzlibrary{external}
+
+% For plot
+\usepackage{pgfplots}
+\usepackage{microtype}
+
+\usepackage[textwidth=1cm, textsize=tiny]{todonotes}
+
+\usepackage{verbatimbox}
+
+\ifx\compilemode\revise
+
+\newcommand{ \ljz }[1]{{\color{red} {#1}}}
+\newcommand{ \ljzrm }[1]{{\color{red} \small {\sout{#1}}}}
+
+\newcommand{ \ryy }[1]{{\color{purple} {#1}}}
+\newcommand{ \ryyrm }[1]{{\color{purple} \small {\sout{#1}}}}
+\newcommand{ \ryych }[2]{\ryyrm{#1} \ryy{#2}}
+
+\else 
+
+\newcommand{ \ljz }[1]{{{#1}}}
+\newcommand{ \ljzrm }[1]{{}}
+
+\newcommand{ \ryy }[1]{{{#1}}}
+\newcommand{ \ryyrm }[1]{{}}
+\newcommand{ \ryych }[2]{\ryyrm{#1} \ryy{#2}}
+
+\fi
+\newcommand{ \pending }[1]{{\color{orange} {#1}}}
+
+\newcommand{\brCovImproveAFLppL}{14\%}
+\newcommand{\brCovImproveAFLppU}{94\%}
+\newcommand{\brCovImproveAngoraL}{3\%}
+\newcommand{\brCovImproveAngoraU}{41\%}

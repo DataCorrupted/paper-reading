@@ -1,0 +1,24 @@
+\begin{tikzpicture}[
+        auto,
+        mem/.style = {rectangle, draw=black!50, minimum width=16mm,
+                minimum height = 4mm},
+    ]
+    \node (c) [rectangle, align=left]{$ID(\texttt{c}) = \texttt{\textbf{b7b5}}$};
+
+    \node  [mem, draw, below = 5mm of c] (0) {};
+    \node  [left = 1mm of 0] (00) {$\texttt{0x0000}$};
+    \node  [mem, draw, below = 0mm of 0] (1) {};
+    \node  [left = 1mm of 1] (10) {$\texttt{0x0001}$};
+    \node  [mem, draw, below = 0mm of 1] (m) {$\cdots$};
+    \node  [left = 1mm of m] (m0) {$\cdots$};
+    \node  [mem, draw, below = 0mm of m] (b7b5) {};
+    \node  [left = 1mm of b7b5] (b7b50) {$\texttt{\textbf{0xb7b5}}$};
+    \node  [mem, draw, below = 0mm of b7b5] (mm) {$\cdots$};
+    \node  [left = 1mm of mm] (mm0) {$\cdots$};
+    \node  [mem, draw, below = 0mm of mm] (fe) {};
+    \node  [left = 1mm of fe] (fe0) {$\texttt{0xfffe}$};
+    \node  [mem, draw, below = 0mm of fe] (ff) {};
+    \node  [left = 1mm of ff] (ff0) {$\texttt{0xffff}$};
+
+    \path (c) edge[cfgedge, bend left] (b7b50);
+\end{tikzpicture}

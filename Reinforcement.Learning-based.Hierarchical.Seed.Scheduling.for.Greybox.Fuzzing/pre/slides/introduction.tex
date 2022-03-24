@@ -1,0 +1,89 @@
+\begin{frame}
+	\frametitle{Introduction: Greybox fuzzing}
+	% What is greybox fuzzing, what is the workflow, what is the decision choices
+	\input{plots/greybox-fuzzer.tex}
+	\begin{textblock}{8}(9, 2)
+		\begin{itemize}
+			\item \textbf{How is ``new behavior'' defined?}
+			\item \textbf{How do we ``mutate'' input?}
+		\end{itemize}
+	\end{textblock}
+\end{frame}
+\begin{frame}
+	\frametitle{Background: American Fuzzy Lop (AFL) \footfullcite{AFL}}
+	% How do state of the art AFL solve this?
+	\begin{itemize}
+		\item``Mutation'' is purely random.
+		\item Many ways to define ``New behavior'', AFL uses branch count.
+	\end{itemize}
+	\pause
+	\input{plots/afl.tex}
+\end{frame}
+\begin{frame}
+	\frametitle{Background: American Fuzzy Lop (AFL)}
+	\begin{minipage}[t]{0.49\linewidth}
+		\begin{itemize}
+			\item Each byte in the table represents 8 possible ranges of hit count.
+			      \begin{itemize}
+				      \item $\texttt{0x00} \rightarrow 0..0 $
+				      \item $\texttt{0x01} \rightarrow 1..1 $
+				      \item $\cdots$
+				      \item $\texttt{0x08} \rightarrow 4..7 $
+				      \item $\texttt{0x10} \rightarrow 8..15 $
+				      \item $\cdots$
+				      \item $\texttt{0x80} \rightarrow 128+$
+			      \end{itemize}
+			\item Every run local branch counting table is compared (bitwise xor) then merged (bitwise or) with global table.
+		\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.49\linewidth}
+		\begin{figure}[t]
+			\centering
+			\input{plots/afl/table.tex}
+		\end{figure}
+	\end{minipage}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Background: Be more sensitive \footfullcite{241986}}
+	\begin{itemize}
+		\item You can be less sensitive by using block coverage.
+		\item Add calling context or N-gram edge coverage to be more sensitive.
+		\item The more sensitive, the better?
+	\end{itemize}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.5\textwidth]{figs/lattice.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Background: Seed explosion}
+	\begin{minipage}[t]{0.49\linewidth}
+		\begin{lstlisting}[
+				language = C, 
+				xleftmargin=1cm,
+				basicstyle=\footnotesize\ttfamily
+			  ]
+int n = getc();
+int sum = 0;
+for (int i=0; i<n; i++) {
+	sum += getc();
+}
+			  \end{lstlisting}
+		\begin{itemize}
+			\item Seed 1: 0x01, 0x01
+			\item Seed 2: 0x02, 0x01, 0x02
+			\item Seed 3: 0x03, 0x01, 0x02, 0x03
+		\end{itemize}
+	\end{minipage}
+	\begin{minipage}[t]{0.49\linewidth}
+		\begin{itemize}
+			\item Function coverage: It's the same function so 3 seeds are the same.
+			\item Block coverage: Same blocks get executed so 3 seeds are the same.
+			\item Edge coverage: Seed 1 and 2 are different (loop back edge executed in seed 2), 2 and 3 are the same.
+			\item $\infty$ gram: Seeds are different as long as n is different.
+		\end{itemize}
+	\end{minipage}
+\end{frame}

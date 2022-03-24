@@ -1,0 +1,37 @@
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[
+            auto,
+            box/.style = {
+                    draw,rounded corners,blur shadow,fill=white,
+                    align=center,text width=3cm,
+                    node distance=5mm
+                },
+        ]
+        \node [box] [minimum width=5cm, text width=5cm](source) {Source code(C, C++, ...)};
+        \node [draw = none, below = 6cm of source] {\textbf{Greybox fuzzer}};
+        \draw[thick,dotted] ($(source.south west)+(-0.5,-0.4)$)  rectangle ($(source.south west)+(+14.5,-6.5)$);
+
+        \pause
+        \node [box] [below = of source](IR) {Intermediate representation (IR)};
+        \node [box, right= 1cm of IR] (instrumentation) {Instrumentation};
+        \node [box, below=of instrumentation] (P) {Testing program};
+        \path (source) edge[cfgedge] node[left]{Compiler frontend}  (IR);
+        \path (IR) edge[cfgedge] (instrumentation);
+        \path (instrumentation) edge[cfgedge] node[right] {Compiler backend} (P);
+        \pause
+        \node [box, below = 3cm of P] (S) {Seed store};
+        \node [box, right = 1cm of S] (I) {Initial seed};
+        \path (I.west) edge[cfgedge] (S.east);
+        \pause
+        \node [box, below left = 1cm and 2cm of P] (M) {Mutation};
+        \node [box, below right = 1cm and 2cm of P] (B) {Behavior observation};
+        \node [above=of B] (D) {};
+        \path (P.south east) edge[cfgedge, bend left] (B.north west);
+        \path (B.south west) edge[cfgedge, bend left, align = left] node[above] {Has new \\ behavior} (S.north east);
+        \path (S.north west) edge[cfgedge, bend left, align = left] node[above] {Seed \\ selection} (M.south east);
+        \path (M.north east) edge[cfgedge, bend left, align = left] node[below] {New \\ input} (P.south west);
+        \path (B.north) edge[cfgedge, bend left, align=left] node[right] {Discard if no \\ new behavior} (D.south);
+        \pause
+    \end{tikzpicture}
+\end{figure}

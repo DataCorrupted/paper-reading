@@ -1,0 +1,545 @@
+@inproceedings{10.1145/2508859.2516736,
+  author = {Woo, Maverick and Cha, Sang Kil and Gottlieb, Samantha and Brumley, David},
+  title = {Scheduling Black-Box Mutational Fuzzing},
+  year = {2013},
+  isbn = {9781450324779},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/2508859.2516736},
+  doi = {10.1145/2508859.2516736},
+  abstract = {Black-box mutational fuzzing is a simple yet effective technique to find bugs in software. Given a set of program-seed pairs, we ask how to schedule the fuzzings of these pairs in order to maximize the number of unique bugs found at any point in time. We develop an analytic framework using a mathematical model of black-box mutational fuzzing and use it to evaluate 26 existing and new randomized online scheduling algorithms. Our experiments show that one of our new scheduling algorithms outperforms the multi-armed bandit algorithm in the current version of the CERT Basic Fuzzing Framework (BFF) by finding 1.5x more unique bugs in the same amount of time.},
+  booktitle = {Proceedings of the 2013 ACM SIGSAC Conference on Computer &amp; Communications Security},
+  pages = {511–522},
+  numpages = {12},
+  keywords = {software security, fuzz configuration scheduling},
+  location = {Berlin, Germany},
+  series = {CCS '13}
+}
+
+@inproceedings{10.1145/3468264.3473932,
+author = {Metzman, Jonathan and Szekeres, L\'{a}szl\'{o} and Simon, Laurent and Sprabery, Read and Arya, Abhishek},
+title = {FuzzBench: An Open Fuzzer Benchmarking Platform and Service},
+year = {2021},
+isbn = {9781450385626},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3468264.3473932},
+doi = {10.1145/3468264.3473932},
+abstract = {Fuzzing is a key tool used to reduce bugs in production software. At Google, fuzzing has uncovered tens of thousands of bugs. Fuzzing is also a popular subject of academic research. In 2020 alone, over 120 papers were published on the topic of improving, developing, and evaluating fuzzers and fuzzing techniques. Yet, proper evaluation of fuzzing techniques remains elusive. The community has struggled to converge on methodology and standard tools for fuzzer evaluation. To address this problem, we introduce FuzzBench as an open-source turnkey platform and free service for evaluating fuzzers. It aims to be easy to use, fast, reliable, and provides reproducible experiments. Since its release in March 2020, FuzzBench has been widely used both in industry and academia, carrying out more than 150 experiments for external users. It has been used by several published and in-the-work papers from academic groups, and has had real impact on the most widely used fuzzing tools in industry. The presented case studies suggest that FuzzBench is on its way to becoming a standard fuzzer benchmarking platform.},
+booktitle = {Proceedings of the 29th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering},
+pages = {1393–1403},
+numpages = {11},
+keywords = {testing, fuzzing, software security, benchmarking, fuzz testing},
+location = {Athens, Greece},
+series = {ESEC/FSE 2021}
+}
+
+@inproceedings {241986,
+  author = {Jinghan Wang and Yue Duan and Wei Song and Heng Yin and Chengyu Song},
+  title = {Be Sensitive and Collaborative: Analyzing Impact of Coverage Metrics in Greybox Fuzzing},
+  booktitle = {22nd International Symposium on Research in Attacks, Intrusions and Defenses (RAID 2019)},
+  year = {2019},
+  isbn = {978-1-939133-07-6},
+  address = {Chaoyang District, Beijing},
+  pages = {1--15},
+  url = {https://www.usenix.org/conference/raid2019/presentation/wang},
+  publisher = {USENIX Association},
+  month = sep,
+}
+
+@inproceedings{Angora,
+  author    = {Peng Chen and Hao Chen},
+  title     = {Angora: efficient fuzzing by principled search},
+  booktitle = {IEEE Symposium on Security and Privacy (SP)},
+  year      = {2018},
+  address   = {San Francisco, CA}
+}
+
+@online{AFL,
+  title = {American fuzzy lop},
+  url   = {http://lcamtuf.coredump.cx/afl/}
+}
+
+@online{dfsan,
+  title = {DataFlowSanitizer},
+  url   = {https://clang.llvm.org/docs/dataflowsanitizer}
+}
+
+@online{gllvm,
+  title = {gllvm: Whole Program LLVM in Go},
+  url   = {https://github.com/SRI-CSL/gllvm}
+}
+
+@inproceedings{klees2018evaluating,
+  title        = {Evaluating fuzz testing},
+  author       = {Klees, George and Ruef, Andrew and Cooper, Benji and Wei, Shiyi and Hicks, Michael},
+  booktitle    = {Proceedings of the 2018 ACM SIGSAC Conference on Computer and Communications Security},
+  pages        = {2123--2138},
+  year         = {2018},
+  organization = {ACM}
+}
+
+@inproceedings{dolan2016lava,
+  title        = {Lava: Large-scale automated vulnerability addition},
+  author       = {Dolan-Gavitt, Brendan and Hulin, Patrick and Kirda, Engin and Leek, Tim and Mambretti, Andrea and Robertson, Wil and Ulrich, Frederick and Whelan, Ryan},
+  booktitle    = {2016 IEEE Symposium on Security and Privacy (SP)},
+  pages        = {110--121},
+  year         = {2016},
+  organization = {IEEE}
+}
+
+@inproceedings{redqueen,
+  title     = {REDQUEEN: Fuzzing with Input-to-State Correspondence.},
+  author    = {Aschermann, Cornelius and Schumilo, Sergej and Blazytko, Tim and Gawlik, Robert and Holz, Thorsten},
+  booktitle = {NDSS},
+  volume    = {19},
+  pages     = {1--15},
+  year      = {2019}
+}
+
+@inproceedings{neuzz,
+  title        = {NEUZZ: Efficient fuzzing with neural program smoothing},
+  author       = {She, Dongdong and Pei, Kexin and Epstein, Dave and Yang, Junfeng and Ray, Baishakhi and Jana, Suman},
+  booktitle    = {2019 IEEE Symposium on Security and Privacy (SP)},
+  pages        = {803--817},
+  year         = {2019},
+  organization = {IEEE}
+}
+
+@inproceedings{qsym,
+  author    = {Insu Yun and Sangho Lee and Meng Xu and Yeongjin Jang and Taesoo Kim},
+  title     = {{QSYM} : A Practical Concolic Execution Engine Tailored for Hybrid Fuzzing},
+  booktitle = {27th {USENIX} Security Symposium ({USENIX} Security 18)},
+  year      = {2018},
+  isbn      = {978-1-931971-46-1},
+  address   = {Baltimore, MD},
+  pages     = {745--761},
+  publisher = {{USENIX} Association}
+}
+
+@inproceedings{collafl,
+  author    = {S. {Gan} and C. {Zhang} and X. {Qin} and X. {Tu} and K. {Li} and Z. {Pei} and Z. {Chen}},
+  booktitle = {2018 IEEE Symposium on Security and Privacy (SP)},
+  title     = {CollAFL: Path Sensitive Fuzzing},
+  year      = {2018},
+  volume    = {},
+  number    = {},
+  pages     = {679-696},
+  doi       = {10.1109/SP.2018.00040}
+}
+
+@inproceedings{matryoshka,
+  author    = {Chen, Peng and Liu, Jianzhong and Chen, Hao},
+  title     = {Matryoshka: Fuzzing Deeply Nested Branches},
+  year      = {2019},
+  isbn      = {9781450367479},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/3319535.3363225},
+  doi       = {10.1145/3319535.3363225},
+  abstract  = {Greybox fuzzing has made impressive progress in recent years, evolving from heuristics-based random mutation to approaches for solving individual branch constraints. However, they have difficulty solving path constraints that involve deeply nested conditional statements, which are common in image and video decoders, network packet analyzers, and checksum tools. We propose an approach for addressing this problem. First, we identify all the control flow-dependent conditional statements of the target conditional statement. Next, we select the taint flow-dependent conditional statements. Finally, we use three strategies to find an input that satisfies all conditional statements simultaneously. We implemented this approach in a tool called Matryoshka and compared its effectiveness on 13 open source programs against other state-of-the-art fuzzers. Matryoshka has significantly higher cumulative line and branch coverage than AFL, QSYM, and Angora. We manually classified the crashes found by Matryoshka into 41 unique new bugs and obtained 12 CVEs. Our evaluation also uncovered the key technique contributing to Matryoshka's impressive performance: it collects only the nesting constraints that may cause the target conditional statement unreachable, which greatly simplifies the path constraints that it has to solve.},
+  booktitle = {Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security},
+  pages     = {499–513},
+  numpages  = {15},
+  keywords  = {vulnerability detection, coverage-based fuzzing, taint analysis},
+  location  = {London, United Kingdom},
+  series    = {CCS '19}
+}
+
+@inproceedings{10.1007/978-3-642-35182-2_9,
+  author    = {Navas, Jorge A.
+      and Schachte, Peter
+      and S{\o}ndergaard, Harald
+      and Stuckey, Peter J.},
+  editor    = {Jhala, Ranjit
+      and Igarashi, Atsushi},
+  title     = {Signedness-Agnostic Program Analysis: Precise Integer Bounds for Low-Level Code},
+  booktitle = {Programming Languages and Systems},
+  year      = {2012},
+  publisher = {Springer Berlin Heidelberg},
+  address   = {Berlin, Heidelberg},
+  pages     = {115--130},
+  abstract  = {Many compilers target common back-ends, thereby avoiding the need to implement the same analyses for many different source languages. This has led to interest in static analysis of LLVM code. In LLVM (and similar languages) most signedness information associated with variables has been compiled away. Current analyses of LLVM code tend to assume that either all values are signed or all are unsigned (except where the code specifies the signedness). We show how program analysis can simultaneously consider each bit-string to be both signed and unsigned, thus improving precision, and we implement the idea for the specific case of integer bounds analysis. Experimental evaluation shows that this provides higher precision at little extra cost. Our approach turns out to be beneficial even when all signedness information is available, such as when analysing C or Java code.},
+  isbn      = {978-3-642-35182-2}
+}
+
+@article{aflfast,
+  author  = {M. {Böhme} and V. {Pham} and A. {Roychoudhury}},
+  journal = {IEEE Transactions on Software Engineering},
+  title   = {Coverage-Based Greybox Fuzzing as Markov Chain},
+  year    = {2019},
+  volume  = {45},
+  number  = {5},
+  pages   = {489-506},
+  doi     = {10.1109/TSE.2017.2785841}
+}
+
+@inproceedings{Krace,
+  author    = {M. {Xu} and S. {Kashyap} and H. {Zhao} and T. {Kim}},
+  booktitle = {2020 IEEE Symposium on Security and Privacy (SP)},
+  title     = {Krace: Data Race Fuzzing for Kernel File Systems},
+  year      = {2020},
+  volume    = {},
+  number    = {},
+  pages     = {1643-1660}
+}
+
+@inproceedings{chen2018iotfuzzer,
+  title     = {IoTFuzzer: Discovering Memory Corruptions in IoT Through App-based Fuzzing.},
+  author    = {Chen, Jiongyi and Diao, Wenrui and Zhao, Qingchuan and Zuo, Chaoshun and Lin, Zhiqiang and Wang, XiaoFeng and Lau, Wing Cheong and Sun, Menghan and Yang, Ronghai and Zhang, Kehuan},
+  booktitle = {NDSS},
+  year      = {2018}
+}
+
+@inproceedings{xu2019fuzzing,
+  title        = {Fuzzing file systems via two-dimensional input space exploration},
+  author       = {Xu, Wen and Moon, Hyungon and Kashyap, Sanidhya and Tseng, Po-Ning and Kim, Taesoo},
+  booktitle    = {2019 IEEE Symposium on Security and Privacy (SP)},
+  pages        = {818--834},
+  year         = {2019},
+  organization = {IEEE}
+}
+
+@inproceedings{gan2018collafl,
+  title        = {Collafl: Path sensitive fuzzing},
+  author       = {Gan, Shuitao and Zhang, Chao and Qin, Xiaojun and Tu, Xuwen and Li, Kang and Pei, Zhongyu and Chen, Zuoning},
+  booktitle    = {2018 IEEE Symposium on Security and Privacy (SP)},
+  pages        = {679--696},
+  year         = {2018},
+  organization = {IEEE}
+}
+
+@inproceedings{mopt,
+  author    = {Chenyang Lyu and Shouling Ji and Chao Zhang and Yuwei Li and Wei-Han Lee and Yu Song and Raheem Beyah},
+  title     = {{MOPT}: Optimized Mutation Scheduling for Fuzzers},
+  booktitle = {28th {USENIX} Security Symposium ({USENIX} Security 19)},
+  year      = {2019},
+  isbn      = {978-1-939133-06-9},
+  address   = {Santa Clara, CA},
+  pages     = {1949--1966},
+  url       = {https://www.usenix.org/conference/usenixsecurity19/presentation/lyu},
+  publisher = {{USENIX} Association},
+  month     = aug
+}
+
+@inproceedings{libdft,
+  author    = {Kemerlis, Vasileios P. and Portokalidis, Georgios and Jee, Kangkook and Keromytis, Angelos D.},
+  title     = {Libdft: Practical Dynamic Data Flow Tracking for Commodity Systems},
+  year      = {2012},
+  isbn      = {9781450311762},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/2151024.2151042},
+  doi       = {10.1145/2151024.2151042},
+  abstract  = {Dynamic data flow tracking (DFT) deals with tagging and tracking data of interest as they propagate during program execution. DFT has been repeatedly implemented by a variety of tools for numerous purposes, including protection from zero-day and cross-site scripting attacks, detection and prevention of information leaks, and for the analysis of legitimate and malicious software. We present libdft, a dynamic DFT framework that unlike previous work is at once fast, reusable, and works with commodity software and hardware. libdft provides an API for building DFT-enabled tools that work on unmodified binaries, running on common operating systems and hardware, thus facilitating research and rapid prototyping. We explore different approaches for implementing the low-level aspects of instruction-level data tracking, introduce a more efficient and 64-bit capable shadow memory, and identify (and avoid) the common pitfalls responsible for the excessive performance overhead of previous studies. We evaluate libdft using real applications with large codebases like the Apache and MySQL servers, and the Firefox web browser. We also use a series of benchmarks and utilities to compare libdft with similar systems. Our results indicate that it performs at least as fast, if not faster, than previous solutions, and to the best of our knowledge, we are the first to evaluate the performance overhead of a fast dynamic DFT implementation in such depth. Finally, libdft is freely available as open source software.},
+  booktitle = {Proceedings of the 8th ACM SIGPLAN/SIGOPS Conference on Virtual Execution Environments},
+  pages     = {121–132},
+  numpages  = {12},
+  keywords  = {taint analysis, exploit prevention, dynamic binary instrumentation, data flow tracking, information leak detection},
+  location  = {London, England, UK},
+  series    = {VEE '12}
+}
+
+@inproceedings{gan2020greyone,
+  title     = {GREYONE: Data Flow Sensitive Fuzzing},
+  author    = {Gan, Shuitao and Zhang, Chao and Chen, Peng and Zhao, Bodong and Qin, Xiaojun and Wu, Dong and Chen, Zuoning},
+  booktitle = {29th USENIX Security Symposium (USENIX Security 20). USENIX Association, Boston, MA. https://www. usenix. org/conference/usenixsecurity20/presentation/gan},
+  year      = {2020}
+}
+
+@inproceedings{osterlund2020parmesan,
+  title     = {ParmeSan: Sanitizer-guided Greybox Fuzzing},
+  author    = {{\"O}sterlund, Sebastian and Razavi, Kaveh and Bos, Herbert and Giuffrida, Cristiano},
+  booktitle = {29th $\{$USENIX$\}$ Security Symposium ($\{$USENIX$\}$ Security 20)},
+  year      = {2020}
+}
+
+@inproceedings{aschermann2020ijon,
+  title        = {Ijon: Exploring deep state spaces via fuzzing},
+  author       = {Aschermann, Cornelius and Schumilo, Sergej and Abbasi, Ali and Holz, Thorsten},
+  booktitle    = {2020 IEEE Symposium on Security and Privacy (SP)},
+  pages        = {1597--1612},
+  year         = {2020},
+  organization = {IEEE}
+}
+
+@inproceedings{chen2020savior,
+  title        = {Savior: Towards bug-driven hybrid testing},
+  author       = {Chen, Yaohui and Li, Peng and Xu, Jun and Guo, Shengjian and Zhou, Rundong and Zhang, Yulong and Wei, Tao and Lu, Long},
+  booktitle    = {2020 IEEE Symposium on Security and Privacy (SP)},
+  pages        = {1580--1596},
+  year         = {2020},
+  organization = {IEEE}
+}
+
+@inproceedings{jeong2019razzer,
+  title        = {Razzer: Finding kernel race bugs through fuzzing},
+  author       = {Jeong, Dae R and Kim, Kyungtae and Shivakumar, Basavesh and Lee, Byoungyoung and Shin, Insik},
+  booktitle    = {2019 IEEE Symposium on Security and Privacy (SP)},
+  pages        = {754--768},
+  year         = {2019},
+  organization = {IEEE}
+}
+
+@inproceedings{cadar2008klee,
+  title     = {KLEE: Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs.},
+  author    = {Cadar, Cristian and Dunbar, Daniel and Engler, Dawson R and others},
+  booktitle = {OSDI},
+  volume    = {8},
+  pages     = {209--224},
+  year      = {2008}
+}
+
+@inproceedings{ming2016straighttaint,
+  title        = {Straighttaint: Decoupled offline symbolic taint analysis},
+  author       = {Ming, Jiang and Wu, Dinghao and Wang, Jun and Xiao, Gaoyao and Liu, Peng},
+  booktitle    = {2016 31st IEEE/ACM International Conference on Automated Software Engineering (ASE)},
+  pages        = {308--319},
+  year         = {2016},
+  organization = {IEEE}
+}
+
+@article{wang2020tofu,
+  title   = {TOFU: Target-Orienter FUzzer},
+  author  = {Wang, Zi and Liblit, Ben and Reps, Thomas},
+  journal = {arXiv preprint arXiv:2004.14375},
+  year    = {2020}
+}
+
+@inproceedings{wang2019sensitive,
+  title     = {Be sensitive and collaborative: Analyzing impact of coverage metrics in greybox fuzzing},
+  author    = {Wang, Jinghan and Duan, Yue and Song, Wei and Yin, Heng and Song, Chengyu},
+  booktitle = {22nd International Symposium on Research in Attacks, Intrusions and Defenses ($\{$RAID$\}$ 2019)},
+  pages     = {1--15},
+  year      = {2019}
+}
+
+@inproceedings{wen2020memlock,
+  title     = {Memlock: Memory usage guided fuzzing},
+  author    = {Wen, Cheng and Wang, Haijun and Li, Yuekang and Qin, Shengchao and Liu, Yang and Xu, Zhiwu and Chen, Hongxu and Xie, Xiaofei and Pu, Geguang and Liu, Ting},
+  booktitle = {Proceedings of the ACM/IEEE 42nd International Conference on Software Engineering},
+  pages     = {765--777},
+  year      = {2020}
+}
+
+@inproceedings{wang2019looking,
+  title     = {Looking from the mirror: evaluating IoT device security through mobile companion apps},
+  author    = {Wang, Xueqiang and Sun, Yuqiong and Nanda, Susanta and Wang, XiaoFeng},
+  booktitle = {28th $\{$USENIX$\}$ Security Symposium ($\{$USENIX$\}$ Security 19)},
+  pages     = {1151--1167},
+  year      = {2019}
+}
+
+@inproceedings{chen2020muzz,
+  title     = {$\{$MUZZ$\}$: Thread-aware Grey-box Fuzzing for Effective Bug Hunting in Multithreaded Programs},
+  author    = {Chen, Hongxu and Guo, Shengjian and Xue, Yinxing and Sui, Yulei and Zhang, Cen and Li, Yuekang and Wang, Haijun and Liu, Yang},
+  booktitle = {29th $\{$USENIX$\}$ Security Symposium ($\{$USENIX$\}$ Security 20)},
+  pages     = {2325--2342},
+  year      = {2020}
+}
+
+@inproceedings{liu2020fans,
+  title     = {$\{$FANS$\}$: Fuzzing Android Native System Services via Automated Interface Analysis},
+  author    = {Liu, Baozheng and Zhang, Chao and Gong, Guang and Zeng, Yishun and Ruan, Haifeng and Zhuge, Jianwei},
+  booktitle = {29th $\{$USENIX$\}$ Security Symposium ($\{$USENIX$\}$ Security 20)},
+  year      = {2020}
+}
+
+@inproceedings{zong2020fuzzguard,
+  title     = {FuzzGuard: Filtering out Unreachable Inputs in Directed Grey-box Fuzzing through Deep Learning},
+  author    = {Zong, Peiyuan and Lv, Tao and Wang, Dawei and Deng, Zizhuang and Liang, Ruigang and Chen, Kai},
+  booktitle = {29th $\{$USENIX$\}$ Security Symposium ($\{$USENIX$\}$ Security 20)},
+  pages     = {2255--2269},
+  year      = {2020}
+}
+
+@inproceedings{AFLplusplus,
+  author    = {Andrea Fioraldi and Dominik Maier and Heiko Ei{\ss}feldt and Marc Heuse},
+  title     = {{AFL++}: Combining Incremental Steps of Fuzzing Research},
+  booktitle = {14th {USENIX} Workshop on Offensive Technologies ({WOOT} 20)},
+  year      = {2020},
+  publisher = {{USENIX} Association},
+  month     = aug
+}
+
+@inproceedings{banerjee2019iodine,
+  title        = {Iodine: fast dynamic taint tracking using rollback-free optimistic hybrid analysis},
+  author       = {Banerjee, Subarno and Devecsery, David and Chen, Peter M and Narayanasamy, Satish},
+  booktitle    = {2019 IEEE Symposium on Security and Privacy (SP)},
+  pages        = {490--504},
+  year         = {2019},
+  organization = {IEEE}
+}
+
+@inproceedings{10.1145/237721.237727,
+  author    = {Steensgaard, Bjarne},
+  title     = {Points-to Analysis in Almost Linear Time},
+  year      = {1996},
+  isbn      = {0897917693},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/237721.237727},
+  doi       = {10.1145/237721.237727},
+  abstract  = {We present an interprocedural flow-insensitive points-to analysis based on type inference methods with an almost linear time cost complexity To our knowledge, this is the asymptotically fastest non-trivial interprocedural points-to analysis algorithm yet described The algorithm is based on a non-standard type system. The type inferred for any variable represents a set of locations and includes a type which in turn represents a set of locations possibly pointed to by the variable. The type inferred for a function variable represents a set of functions It may point to and includes a type signature for these functions The results are equivalent to those of a flow-insensitive alias analysis (and control flow analysis) that assumes alias relations are reflexive and transitive.This work makes three contributions. The first is a type system for describing a universally valid storage shape graph for a program in linear space. The second is a constraint system which often leads to better results than the "obvious" constraint system for the given type system The third is an almost linear time algorithm for points-to analysis by solving a constraint system.},
+  booktitle = {Proceedings of the 23rd ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages},
+  pages     = {32–41},
+  numpages  = {10},
+  location  = {St. Petersburg Beach, Florida, USA},
+  series    = {POPL '96}
+}
+
+@article{10.1145/773473.178264,
+  author     = {Emami, Maryam and Ghiya, Rakesh and Hendren, Laurie J.},
+  title      = {Context-Sensitive Interprocedural Points-to Analysis in the Presence of Function Pointers},
+  year       = {1994},
+  issue_date = {June 1994},
+  publisher  = {Association for Computing Machinery},
+  address    = {New York, NY, USA},
+  volume     = {29},
+  number     = {6},
+  issn       = {0362-1340},
+  url        = {https://doi.org/10.1145/773473.178264},
+  doi        = {10.1145/773473.178264},
+  abstract   = {This paper reports on the design, implementation, and empirical results of a new method for dealing with the aliasing problem in C. The method is based on approximating the points-to relationships between accessible stack locations, and can be used to generate alias pairs, or used directly for other analyses and transformations.Our method provides context-sensitive interprocedural information based on analysis over invocation graphs that capture all calling contexts including recursive and mutually-recursive calling contexts. Furthermore, the method allows the smooth integration for handling general function pointers in C.We illustrate the effectiveness of the method with empirical results from an implementation in the McCAT optimizing/parallelizing C compiler.},
+  journal    = {SIGPLAN Not.},
+  month      = jun,
+  pages      = {242–256},
+  numpages   = {15}
+}
+
+@inproceedings{10.1145/178243.178264,
+  author    = {Emami, Maryam and Ghiya, Rakesh and Hendren, Laurie J.},
+  title     = {Context-Sensitive Interprocedural Points-to Analysis in the Presence of Function Pointers},
+  year      = {1994},
+  isbn      = {089791662X},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/178243.178264},
+  doi       = {10.1145/178243.178264},
+  abstract  = {This paper reports on the design, implementation, and empirical results of a new method for dealing with the aliasing problem in C. The method is based on approximating the points-to relationships between accessible stack locations, and can be used to generate alias pairs, or used directly for other analyses and transformations.Our method provides context-sensitive interprocedural information based on analysis over invocation graphs that capture all calling contexts including recursive and mutually-recursive calling contexts. Furthermore, the method allows the smooth integration for handling general function pointers in C.We illustrate the effectiveness of the method with empirical results from an implementation in the McCAT optimizing/parallelizing C compiler.},
+  booktitle = {Proceedings of the ACM SIGPLAN 1994 Conference on Programming Language Design and Implementation},
+  pages     = {242–256},
+  numpages  = {15},
+  location  = {Orlando, Florida, USA},
+  series    = {PLDI '94}
+}
+
+@inproceedings{asan,
+  title     = {AddressSanitizer: A Fast Address Sanity Checker},
+  author    = {Konstantin Serebryany and Derek Bruening and Alexander Potapenko and Dmitry Vyukov},
+  year      = {2012},
+  url       = {https://www.usenix.org/conference/usenixfederatedconferencesweek/addresssanitizer-fast-address-sanity-checker},
+  booktitle = {USENIX ATC 2012}
+}
+
+@online{ubsan,
+  title = {{LLVM} Undefined Behavior Sanitizer},
+  url   = {https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html}
+}
+
+@inproceedings{msan,
+  title        = {MemorySanitizer: fast detector of uninitialized memory use in C++},
+  author       = {Stepanov, Evgeniy and Serebryany, Konstantin},
+  booktitle    = {Proceedings of the 13th Annual IEEE/ACM International Symposium on Code Generation and Optimization},
+  pages        = {46--55},
+  year         = {2015},
+  organization = {IEEE Computer Society}
+}
+
+@inproceedings{li2021unifuzz,
+  title     = {Unifuzz: A holistic and pragmatic metrics-driven platform for evaluating fuzzers},
+  author    = {Li, Yuwei and Ji, Shouling and Chen, Yuan and Liang, Sizhuang and Lee, Wei-Han and Chen, Yueyao and Lyu, Chenyang and Wu, Chunming and Beyah, Raheem and Cheng, Peng and others},
+  booktitle = {30th USENIX Security Symposium (USENIX Security 21). USENIX Association},
+  year      = {2021}
+}
+
+@article{hazimeh2020magma,
+  title={Magma: A ground-truth fuzzing benchmark},
+  author={Hazimeh, Ahmad and Herrera, Adrian and Payer, Mathias},
+  journal={Proceedings of the ACM on Measurement and Analysis of Computing Systems},
+  volume={4},
+  number={3},
+  pages={1--29},
+  year={2020},
+  publisher={ACM New York, NY, USA}
+}
+
+@inproceedings{rong2020integrity,
+  title={Integrity: Finding Integer Errors by Targeted Fuzzing},
+  author={Rong, Yuyang and Chen, Peng and Chen, Hao},
+  booktitle={International Conference on Security and Privacy in Communication Systems},
+  pages={360--380},
+  year={2020},
+  organization={Springer}
+}
+
+@misc{zeller_2019,
+  title={When Results Are All That Matters: The Case of the Angora Fuzzer},
+  url={https://andreas-zeller.info/2019/10/10/when-results-are-all-that-matters-case.html},
+  journal={When Results Are All That Matters: The Case of the Angora Fuzzer | Andreas Zeller},
+  author={Zeller, Andreas},
+  year={2019},
+  month={Oct}
+}
+
+@Online{juliet,
+  title =  {Software Assurance Reference Dataset},
+  date = {2017-11-03},
+  url = {https://samate.nist.gov/SARD/testsuite.php}
+}
+@inproceedings{sun2016inteq,
+  title={IntEQ: recognizing benign integer overflows via equivalence checking across multiple precisions},
+  author={Sun, Hao and Zhang, Xiangyu and Zheng, Yunhui and Zeng, Qingkai},
+  booktitle={Proceedings of the 38th International Conference on Software Engineering},
+  pages={1051--1062},
+  year={2016},
+  organization={ACM}
+}
+
+
+@article{moy2009modular,
+  title={Modular bug-finding for integer overflows in the large: Sound, efficient, bit-precise static analysis},
+  author={Moy, Yannick and Bj{\o}rner, Nikolaj and Sielaff, David},
+  journal={Microsoft Research},
+  volume={11},
+  year={2009}
+}
+
+@inproceedings{pomonis2014intflow,
+  title={IntFlow: improving the accuracy of arithmetic error detection using information flow tracking},
+  author={Pomonis, Marios and Petsios, Theofilos and Jee, Kangkook and Polychronakis, Michalis and Keromytis, Angelos D},
+  booktitle={Proceedings of the 30th Annual Computer Security Applications Conference},
+  pages={416--425},
+  year={2014},
+  organization={ACM}
+}
+
+@inproceedings{wang2009intscope,
+  title={IntScope: Automatically Detecting Integer Overflow Vulnerability in X86 Binary Using Symbolic Execution.},
+  author={Wang, Tielei and Wei, Tao and Lin, Zhiqiang and Zou, Wei},
+  booktitle={NDSS},
+  year={2009},
+  organization={Citeseer}
+}
+
+@article{dietz2015understanding,
+  title={Understanding integer overflow in C/C++},
+  author={Dietz, Will and Li, Peng and Regehr, John and Adve, Vikram},
+  journal={ACM Transactions on Software Engineering and Methodology (TOSEM)},
+  volume={25},
+  number={1},
+  pages={2},
+  year={2015},
+  publisher={ACM}
+}
+@inproceedings{dietz2012understanding,
+  title={Understanding integer overflow in C/C++},
+  author={Dietz, Will and Li, Peng and Regehr, John and Adve, Vikram},
+  booktitle={34th International Conference on Software Engineering, ICSE 2012},
+  year={2012}
+}
+
+@article{liangpata,
+  title={PATA: Fuzzing with Path Aware Taint Analysis},
+  author={Liang, Jie and Wang, Mingzhe and Zhou, Chijin and Wu, Zhiyong and Jiang, Yu and Liu, Jianzhong and Liu, Zhe and Sun, Jiaguang}
+}

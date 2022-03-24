@@ -1,0 +1,46 @@
+\begin{figure}[t]
+  \centering
+  \begin{subfigure}[b]{0.24\textwidth}
+    \begin{tikzpicture}[auto]
+      \tikzstyle{every node} = [align=center, node distance=1.3cm]
+      \node [draw, circle, minimum size=0.75cm] (A)  {$A$};
+      \node [above of=A, node distance=1cm] (in)  {};
+      \node [draw, circle, minimum size=0.75cm, below left of = A, node distance=1.7cm] (B1) {$B_1$};
+      \node [draw, circle, minimum size=0.75cm, below right of=A, node distance=1.7cm] (B2) {$B_2$};
+      \node [draw, circle, minimum size=0.75cm, below left of = B2, node distance=1.7cm] (C) {$C$};
+      \node [below of=C, node distance=1cm] (out) {};
+
+      \path (in) edge[cfgedge,] node {\footnotesize in} (A);
+      \path (A) edge[cfgedge, bend right] node[above left] {\texttt{a}} (B1);
+      \path (B1) edge[cfgedge, bend right] node [left]{\texttt{c}} (A);
+      \path (B2) edge[cfgedge, bend left] node[right] {\texttt{e}} (C);
+      \path (B1) edge[cfgedge, bend right] node[right] {\texttt{d}} (C);
+      \path (A) edge[cfgedge, bend left] node[above right] {\texttt{b}} (B2);
+      \path (C) edge[cfgedge,] node {\footnotesize out} (out);
+    \end{tikzpicture}
+    \caption{Get Control Flow Graph (CFG) from IR.}
+  \end{subfigure}
+  \pause
+  \begin{subfigure}[b]{0.4\textwidth}
+    \begin{tikzpicture}[auto, draw]
+      \node (B) [rectangle, align=left]{
+        $ID(A) = \texttt{0x0001234}$ \\
+        $ID(B_1)=\texttt{0x000beaf}$ \\
+        $ID(B_2)=\texttt{0x0005678}$ \\
+        $ID(C) = \texttt{0x0009c89}$ \\
+      };
+      \node (E) [below of = B, rectangle, align=left, node distance = 2cm] {
+        $ID(\texttt{a}) = (ID(B_1) >> 1) \text{ xor }ID(A)$\\
+        $ID(\texttt{c}) = (ID(A) >> 1) \text{ xor }ID(B_1)$\\
+        $\cdots$
+      };
+      \path(B) edge[cfgedge] (E);
+    \end{tikzpicture}
+    \caption{Randomly assign block ID (Instrumentation) and compute edge ID (Runtime).}
+  \end{subfigure}
+  \pause
+  \begin{subfigure}[b]{0.24\textwidth}
+    \input{plots/afl/table.tex}
+    \caption{Using edge ID to index a 64KB branch count table.}
+  \end{subfigure}
+\end{figure}

@@ -1,0 +1,81 @@
+\begin{frame}
+	\frametitle{Context free grammar (CFG) and PCFG}
+	\begin{itemize}
+		\item CFG is a computation model more capable than regex, less capable than Turing machine.
+		\item Many programs use CFG as an input(grep, xml, etc.)
+		\item Infer input structure for fuzzing.
+		\item PCFG is CFG with probablity assigned to each generation rule.
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Background: Glade\footfullcite{bastani2017synthesizing}}
+	\begin{itemize}
+		\item Generate CFG based on generalization operation:
+		      \begin{itemize}
+			      \item Alternation, decompose a ubstring. $(ab)* \rightarrow (a|b)*$
+			      \item Repetition.
+			      \item Merging.
+			      \item Character generalization, i.e. replace character
+		      \end{itemize}
+		\item Short comings:
+		      \begin{itemize}
+			      \item Rely on seeds.
+			      \item No over generalization.
+			      \item Two step generalization.
+		      \end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Design: Pex for bootstrapping (Phase 1)}
+	\begin{itemize}
+		\item Uses a symbolic execution engine Pex to generate initial rules.
+		\item Each rule is assigned uniform distribution by the end of phase 1.
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Design: RL for generalizing PCFG (Phase 2)}
+	\begin{itemize}
+		\item Every RL component is well-defined.
+		\item Generalization operations:
+		      \begin{itemize}
+			      \item Character generalization: new one gets $\frac{1}{\text{\# characters}}$ probablity, others reduced proportionally.
+			      \item Repetition
+			      \item Alternation, split probablity equally.
+			      \item Merging, add rule $P \rightarrow Q$ and $Q \rightarrow P$, new one gets $\frac{1}{\text{\# rules}}$ probablity, others reduced proportionally.
+		      \end{itemize}
+		\item Advantages:
+		      \begin{itemize}
+			      \item Already used by Glade
+			      \item Easy to implement
+		      \end{itemize}
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Design: Constructing inputs using PCFG}
+	\begin{itemize}
+		\item Initialize $\alpha = S$
+		\item As long as there are non-terminals, uniformally select one to apply rules.
+		\item Reward of each rule is 1 if the final input is accepted.
+		\item Adjust each rules probability based on policy gradient.
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Evaluation: Precision and recall (Table 1)}
+	\begin{itemize}
+		\item Precision: how many inferred grammar is true? Recall: How many grammar is inferred?
+		\item Glade: High precision, low recall. Glade can effectively generate a subset of true grammar, but due to ``No over generalization'', its recall is limited.
+		\item Phase 1 only: High precision. High recall in 4 programs.
+		\item REINAM: lower precision than Phase 1, some wrong rules are added. Higher precision than Phase 1, more grammar is learnt in 6 programs.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Discussion}
+	\begin{itemize}
+		\item RL's effective seems limited (Table 1 and Figure 5).
+		\item Is PCFG stateful? In context free grammar, a generation rule's correctness is not affected by current state, then why policy gradient?
+	\end{itemize}
+\end{frame}

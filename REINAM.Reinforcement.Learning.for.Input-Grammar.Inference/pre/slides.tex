@@ -1,0 +1,36 @@
+\documentclass[11pt, aspectratio=169]{beamer}
+
+% Common imports and commands
+
+\usepackage[utf8]{inputenc}
+\usetheme{Madrid}
+%\usecolortheme{beaver}
+ 
+% Fix to beamer don't having `figure*'
+% See [here](https://tex.stackexchange.com/questions/16527/redefining-figure-for-beamer)
+\newenvironment{figure*}%
+{\begin{figure}}
+{\end{figure}}
+\usepackage{common}
+\usepackage{biblatex} 
+\DeclareFontShape{OT1}{cmss}{b}{n}{<->ssub * cmss/bx/n}{} 
+\bibliography{main.bib}
+
+%Information to be included in the title page:
+\title{\textbf{Reinforcement Learning-based Hierarchical Seed Scheduling for Greybox Fuzzing}}
+\author[Rong]{\textbf{Yuyang(Peter) Rong}}
+\institute[UC Davis]{
+  University of California, Davis \\ PtrRong@ucdavis.edu
+}
+
+\date[Sept 2021]
+{Sept 2021}
+
+\begin{document}
+
+
+% \frame{\titlepage}
+\input{slides/rl.tex}
+\input{slides/REINAM.tex}
+\input{slides/discussion.tex}
+\end{document}
